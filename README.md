@@ -67,10 +67,9 @@
     eksctl create fargateprofile --name profile1 --cluster cluster1 --region ap-south-1 --namespace ns1
     ```
 
-5. **Clone the repository again:**
+5. **Go to this repository:**
     ```bash
-    git clone https://github.com/Uj5Ghare/django-todo-cicd.git 
-    cd django-todo-cicd/EKS/
+   cd Django-ToDo-App/EKS/my-dir/manifests/
     ```
 
 6. **Apply the Kubernetes configuration:**
