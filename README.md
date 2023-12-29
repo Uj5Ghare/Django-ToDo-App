@@ -4,7 +4,7 @@
 
 ## Prerequisites
 
-#### You can install following tools from tools directory.
+#### You can install the following tools from  `EKS/tools/` path.
 
 - Helm3 installed 
 - Docker installed
