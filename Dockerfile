@@ -1,14 +1,26 @@
-FROM python:3
+FROM python:3 AS build
 
-WORKDIR /todo-app
+WORKDIR /django
 
-COPY . . 
+COPY requirements.txt /django
 
 RUN pip install -r requirements.txt
- 
-RUN python3 manage.py migrate 
 
-Expose 8000
+COPY . /django
 
-CMD ["python","manage.py","runserver","0.0.0.0:8000"]
+RUN python3 manage.py migrate
+
+
+FROM python:alpine
+
+WORKDIR /app
+
+COPY --from=build /django /app
+
+RUN pip install -r requirements.txt
+
+EXPOSE 8000
+
+CMD ["python3","manage.py","runserver","0.0.0.0:8000"]
+
 
