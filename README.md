@@ -1,6 +1,8 @@
-# Django Todo App Deployment 
+# Django Todo App 
 
-### This guide will help you deploy the Django Todo App using Docker and AWS EKS.
+![django-todo-app](staticfiles/todoApp.png)
+
+*This guide will help you deploy the Django Todo App using Docker to AWS EKS.*
 
 ## Prerequisites
 
