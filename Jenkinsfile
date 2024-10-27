@@ -10,13 +10,19 @@ pipeline {
 
         stage("Docker_Build") {
             steps {
-                sh "docker build -t todo-app ."
+                sh "docker build -t todo-app:latest ."
+            }
+        }
+
+        stage("Trivy_Scan") {
+            steps {
+                sh "trivy image --format table todo-app:latest > results.json"
             }
         }
 
         stage("Docker_Run") {
             steps {
-                sh "docker run -d -e app='todo-app' -p 8000:8000 todo-app"
+                sh "docker run -d -e app='todo-app' -p 8000:8000 todo-app:latest"
             }
         }
     }
