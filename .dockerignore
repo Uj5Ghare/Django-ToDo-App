@@ -3,3 +3,5 @@ Dockerfile
 README.md   
 docker-compose.yml
 LICENSE
+.gitignore
+k8s
